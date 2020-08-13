@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Kenzie assignment: List1
+Kenzie assignment: sortList
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
@@ -49,9 +49,16 @@ print()
 
 
 def front_x(words):
-    for sortWord in words:
+    sortList = sorted(words)
+    list2 = []
+    list3 = []
+    for item in sortList:
+        if item[0] == "x":
+            list2.append(item)
+        else:
+            list3.append(item)
 
-    return
+    return list2 + list3
 
 
 print()
