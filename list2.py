@@ -5,7 +5,7 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Timothy La (tla111)"
+__author__ = "Timothy La (tla111), Received help from Joseph (facilitator) for merge & filter problems"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -49,8 +49,12 @@ print()
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
+    newList = zip(list1, list2)
+    zippedList = list(newList)
+    convertedList = []
+    for item, item2 in zippedList:
+        convertedList.append(item + item2)
+    return convertedList
 
 
 # F. empty_filter
@@ -63,8 +67,16 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    # your code here
-    return
+    def noEmptyStrings(name):
+        if name == "" or name == None:
+            return False
+        else:
+            return True
+    listOfNames = filter(noEmptyStrings, list1)
+    return list(listOfNames)
+
+
+print()
 
 
 # G. linear_merge
@@ -79,8 +91,12 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-    # your code here
+    # newList = sorted(list1 + list2)
+    # return newList
     return
+
+
+print()
 
 
 # Provided simple test() function used in main() to print

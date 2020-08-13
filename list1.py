@@ -5,7 +5,7 @@ Kenzie assignment: sortList
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Timothy La (tla111)"
+__author__ = "Timothy La (tla111), Received help for third problem from Coach Mike Boring"
 #
 
 # Copyright 2010 Google Inc.
@@ -74,13 +74,16 @@ print()
 
 
 def sort_last(tuples):
-    #  tuples.sort(key=len)
-    return
+    def myFunc(element):
+        return element[-1]
+    tuples.sort(key=myFunc)
+    return tuples
 
-    print()
 
-    # Provided simple test() function used in main() to print
-    # what each function returns vs. what it's supposed to return.
+print()
+
+# Provided simple test() function used in main() to print
+# what each function returns vs. what it's supposed to return.
 
 
 def test(got, expected):
