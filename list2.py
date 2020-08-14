@@ -5,7 +5,7 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Timothy La (tla111), Received help from Joseph (facilitator) for merge & filter problems"
+__author__ = "Timothy La (tla111), Received help from Joseph"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,12 +28,18 @@ __author__ = "Timothy La (tla111), Received help from Joseph (facilitator) for m
 
 
 def remove_adjacent(nums):
-    # newList = []
-    # for numb in nums:
-    #     if nums.count(numb) >= 2:
-    #         newList.append(numb)
-    # return newList
-    return
+    newList = []
+    newList2 = []
+    for num in nums:
+        if nums.count(num) == 1:
+            newList.append(num)
+        if nums.count(num) > 1:
+            newList2.append(num)
+    for num in newList2:
+        if newList2.count(num) > 1 and newList.count(num) < 1:
+            newList.append(num)
+    newList.sort()
+    return newList
 
 # Filter method
 
@@ -119,7 +125,6 @@ def test(got, expected):
 def main():
     # Each line calls one of the functions above and compares its
     # result to the expected return value for that call.
-
     print('remove_adjacent')
     test(remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
     test(remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
