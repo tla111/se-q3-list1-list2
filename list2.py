@@ -35,8 +35,7 @@ def remove_adjacent(nums):
     # return newList
     return
 
-
-print()
+# Filter method
 
 # E. zip_merge
 # Given two lists, combine the values from their corresponding
@@ -76,9 +75,6 @@ def empty_filter(list1):
     return list(listOfNames)
 
 
-print()
-
-
 # G. linear_merge
 # Given two lists sorted in increasing order, create and
 # return a merged list of all the elements in sorted order.
@@ -91,12 +87,17 @@ print()
 
 
 def linear_merge(list1, list2):
-    # newList = sorted(list1 + list2)
-    # return newList
-    return
-
-
-print()
+    resultList = []
+    while len(list1) > 0 and len(list2) > 0:
+        if list1[0] > list2[0]:
+            removeItemList2 = list2.pop(0)
+            resultList.append(removeItemList2)
+        else:
+            removeItemList1 = list1.pop(0)
+            resultList.append(removeItemList1)
+    resultList.extend(list1)
+    resultList.extend(list2)
+    return resultList
 
 
 # Provided simple test() function used in main() to print
@@ -111,9 +112,10 @@ def test(got, expected):
         repr(got),
         repr(expected)))
 
-
 # The main() function calls the above functions with interesting
 # inputs, using test() to check whether each result is correct or not.
+
+
 def main():
     # Each line calls one of the functions above and compares its
     # result to the expected return value for that call.

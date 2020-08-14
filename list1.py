@@ -34,9 +34,6 @@ def match_ends(words):
     return count
 
 
-print()
-
-
 # B. front_x
 # Given a list of strings, return a list with the strings in
 # sorted order, except group all the strings that begin with
@@ -61,9 +58,6 @@ def front_x(words):
     return list2 + list3
 
 
-print()
-
-
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
 # increasing order by the last element in each tuple.
@@ -80,7 +74,8 @@ def sort_last(tuples):
     return tuples
 
 
-print()
+# 1. Go through each item in the tuple 2. Sort it by the last item
+# (how do you want to sort it, using a callback to be specific)
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
