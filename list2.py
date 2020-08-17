@@ -50,12 +50,12 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    newList = zip(list1, list2)
-    zippedList = list(newList)
-    convertedList = []
-    for item, item2 in zippedList:
-        convertedList.append(item + item2)
-    return convertedList
+    new_list = zip(list1, list2)
+    zipped_list = list(new_list)
+    converted_list = []
+    for item, item2 in zipped_list:
+        converted_list.append(item + item2)
+    return converted_list
 
 
 # F. empty_filter
@@ -68,13 +68,13 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    def noEmptyStrings(name):
+    def no_empty_strings(name):
         if name == "" or name is None:
             return False
         else:
             return True
-    listOfNames = filter(noEmptyStrings, list1)
-    return list(listOfNames)
+    list_of_names = filter(no_empty_strings, list1)
+    return list(list_of_names)
 
 
 # G. linear_merge
@@ -89,17 +89,17 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-    resultList = []
+    result_list = []
     while len(list1) > 0 and len(list2) > 0:
         if list1[0] > list2[0]:
-            removeItemList2 = list2.pop(0)
-            resultList.append(removeItemList2)
+            remove_item_list2 = list2.pop(0)
+            result_list.append(remove_item_list2)
         else:
-            removeItemList1 = list1.pop(0)
-            resultList.append(removeItemList1)
-    resultList.extend(list1)
-    resultList.extend(list2)
-    return resultList
+            remove_item_list1 = list1.pop(0)
+            result_list.append(remove_item_list1)
+    result_list.extend(list1)
+    result_list.extend(list2)
+    return result_list
 
 
 # Provided simple test() function used in main() to print

@@ -48,10 +48,10 @@ def match_ends(words):
 
 
 def front_x(words):
-    sortList = sorted(words)
+    sort_List = sorted(words)
     list2 = []
     list3 = []
-    for item in sortList:
+    for item in sort_List:
         if item[0] == "x":
             list2.append(item)
         else:
@@ -70,9 +70,9 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    def myFunc(element):
+    def my_func(element):
         return element[-1]
-    tuples.sort(key=myFunc)
+    tuples.sort(key=my_func)
     return tuples
 
 
