@@ -28,18 +28,14 @@ __author__ = "Timothy La (tla111), Received help from Joseph"
 
 
 def remove_adjacent(nums):
-    newList = []
-    newList2 = []
-    for num in nums:
-        if nums.count(num) == 1:
-            newList.append(num)
-        if nums.count(num) > 1:
-            newList2.append(num)
-    for num in newList2:
-        if newList2.count(num) > 1 and newList.count(num) < 1:
-            newList.append(num)
-    newList.sort()
-    return newList
+    new_list = []
+    # first_num = new_list.(nums[0])
+    for x in nums:
+        if len(new_list) == 0 or x != new_list[-1]:
+            new_list.append(x)
+    return new_list
+
+# Check previous number, compare with newest item added in new list.
 
 # Filter method
 
@@ -73,7 +69,7 @@ def zip_merge(list1, list2):
 
 def empty_filter(list1):
     def noEmptyStrings(name):
-        if name == "" or name == None:
+        if name == "" or name is None:
             return False
         else:
             return True
