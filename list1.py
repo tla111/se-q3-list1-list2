@@ -35,6 +35,10 @@ def match_ends(words):
             count += 1
     return count
 
+# 1. Loop over every word in the list
+# 2. If the string's length is >= 2 and the first letter == the last letter
+    # Increase the count by 1
+# 3. Output count
 
 # B. front_x
 # Given a list of strings, return a list with the strings in
@@ -59,6 +63,14 @@ def front_x(words):
 
     return list2 + list3
 
+# 1. Sort the items in the list in alphabetical order and store in a variable
+# 2. Create two empty lists and store each in its own variable
+# 3. Loop over each string in the sorted list
+# Option 1 - If the first letter of the string starts with "x"
+#   Add the item to list2
+# Option 2 - If the first letter of the string does not start with "x"
+#   Add the item to list3
+# 4. Output list2 + list3
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
@@ -75,9 +87,9 @@ def sort_last(tuples):
     tuples.sort(key=my_func)
     return tuples
 
-
-# 1. Go through each item in the tuple 2. Sort it by the last item
-# (how do you want to sort it, using a callback to be specific)
+# 1. Define a function that will return the last element of each tuple
+# 2. Sort the list by ascending order depending on the last element
+#    of each tuple
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.

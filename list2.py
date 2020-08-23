@@ -29,15 +29,18 @@ __author__ = "Timothy La (tla111), Received help from Joseph"
 
 def remove_adjacent(nums):
     new_list = []
-    # first_num = new_list.(nums[0])
     for x in nums:
         if len(new_list) == 0 or x != new_list[-1]:
             new_list.append(x)
     return new_list
 
-# Check previous number, compare with newest item added in new list.
-
-# Filter method
+# 1. Create an empty list and store it in a variable
+# 2. Loop over each item in the nums list
+# 3. If the length of the new_list is 0 or
+#    the current item (x) in the iteration does not equal
+#    to the last item in the new_list
+#       Add the current item to the new_list list
+# 4. Output the new_list
 
 # E. zip_merge
 # Given two lists, combine the values from their corresponding
@@ -53,10 +56,19 @@ def zip_merge(list1, list2):
     new_list = zip(list1, list2)
     zipped_list = list(new_list)
     converted_list = []
-    for item, item2 in zipped_list:
-        converted_list.append(item + item2)
+    for item1, item2 in zipped_list:
+        converted_list.append(item1 + item2)
     return converted_list
 
+# ** The zip() generates a series of tuples containing
+#       elements from each iterable.
+# 1. zip() list1 & list2, then store in a variable
+# 2. Put each tuple from new_list to a list and
+#    store in a variable
+# 3. Create a for loop that iterates through both items in
+#    each tuple
+# 4. Combine item1 & item2 and append to converted_list
+# 5. Output converted_list
 
 # F. empty_filter
 # Given a single list containing strings, empty strings, and
@@ -75,6 +87,17 @@ def empty_filter(list1):
             return True
     list_of_names = filter(no_empty_strings, list1)
     return list(list_of_names)
+
+# 1. Create a callback function
+#       Option 1: If the item in the iteration = "" or
+#                 If the item in the iteration = None
+#                 return False
+#       Option 2: If not
+#                 return True
+# 2. Use the filter method to use the callback function that
+#    will go through each item in list1
+#       The new list will only store items that returned true
+# 3. Output list_of_names
 
 
 # G. linear_merge
@@ -100,6 +123,25 @@ def linear_merge(list1, list2):
     result_list.extend(list1)
     result_list.extend(list2)
     return result_list
+
+# 1. Create an empty list
+# 2. Create a while loop that will run as long as
+#    the length of list1 and list2 is > than 0
+# 3. If the first value of list1 > the first value
+#    of list2, then remove the first value of list2
+#    and store in a variable
+#    Add the removed item into result_list
+# 4. If the first value of list1 < the first value
+#    of list2, then remove the first value of list1
+#    and store in a variable
+#    add the removed item into result_list
+# 5. Once the loop stops running, extend the remaining items
+#    in list1 or list2 to result_list
+# 6. Output result_list
+# Ex: list1 = ['aa', 'xx', 'zz'], list2 = ['bb', 'cc']
+#    result_list = ['aa', 'bb', 'cc']
+#    list1 = ["xx", "zz"]
+#    result_list = ['aa', 'bb', 'cc', "xx", "zz"]
 
 
 # Provided simple test() function used in main() to print
