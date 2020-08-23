@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Kenzie assignment: List1
+Kenzie assignment: sortList
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = "Timothy La (tla111)"
+"""
+ Received help for third problem from Coach Mike Boring"
+"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -32,9 +35,10 @@ def match_ends(words):
             count += 1
     return count
 
-
-print()
-
+# 1. Loop over every word in the list
+# 2. If the string's length is >= 2 and the first letter == the last letter
+    # Increase the count by 1
+# 3. Output count
 
 # B. front_x
 # Given a list of strings, return a list with the strings in
@@ -48,13 +52,25 @@ print()
 
 
 def front_x(words):
-    for sortWord in words:
+    sort_List = sorted(words)
+    list2 = []
+    list3 = []
+    for item in sort_List:
+        if item[0] == "x":
+            list2.append(item)
+        else:
+            list3.append(item)
 
-    return
+    return list2 + list3
 
-
-print()
-
+# 1. Sort the items in the list in alphabetical order and store in a variable
+# 2. Create two empty lists and store each in its own variable
+# 3. Loop over each string in the sorted list
+# Option 1 - If the first letter of the string starts with "x"
+#   Add the item to list2
+# Option 2 - If the first letter of the string does not start with "x"
+#   Add the item to list3
+# 4. Output list2 + list3
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
@@ -66,13 +82,17 @@ print()
 
 
 def sort_last(tuples):
-    #  tuples.sort(key=len)
-    return
+    def my_func(element):
+        return element[-1]
+    tuples.sort(key=my_func)
+    return tuples
 
-    print()
+# 1. Define a function that will return the last element of each tuple
+# 2. Sort the list by ascending order depending on the last element
+#    of each tuple
 
-    # Provided simple test() function used in main() to print
-    # what each function returns vs. what it's supposed to return.
+# Provided simple test() function used in main() to print
+# what each function returns vs. what it's supposed to return.
 
 
 def test(got, expected):
